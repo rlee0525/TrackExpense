@@ -8,12 +8,14 @@ class SessionForm extends React.Component {
     this.state = {
       loginPage: false,
       username: "",
-      password: ""
+      password: "",
+      admin: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
+    this.toggleAdminStatus = this.toggleAdminStatus.bind(this);
   }
 
   componentDidMount() {
@@ -31,15 +33,16 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      admin: this.state.admin,
     };
     if (this.state.loginPage) {
       this.props.login(user)
-        .then(console.log("NEW LOCATION"))
+        .then(() => hashHistory.replace("/expenses"))
         .fail((error) => console.log(error));
     } else {
       this.props.signup(user)
-        .then(console.log("NEW LOCATION"))
+        .then(() => hashHistory.replace("/expenses"))
         .fail((error) => console.log(error));
     }
   }
@@ -51,7 +54,18 @@ class SessionForm extends React.Component {
     this.setState({
       loginPage,
       username: "",
-      password: ""
+      password: "",
+    });
+  }
+
+  toggleAdminStatus(e) {
+    e.preventDefault();
+    let admin = !this.state.admin;
+    this.props.clearErrors();
+    this.setState({
+      admin,
+      username: "",
+      password: "",
     });
   }
 
@@ -80,7 +94,7 @@ class SessionForm extends React.Component {
         return that.props.login({
           username: that.state.username,
           password: that.state.password
-        }).then(console.log("NEW LOCATION"));
+        }).then(() => hashHistory.replace("/expenses"));
       }
 
       setTimeout(() => {
@@ -102,9 +116,8 @@ class SessionForm extends React.Component {
 
   render() {
     let buttonText = this.state.loginPage ? "LOGIN" : "SIGNUP";
-    let questionText = this.state.loginPage ?
-      "Don't have an account?" : "Already have an account?";
     let text = this.state.loginPage ? "Sign Up" : "Login";
+    let adminText = this.state.admin ? "User" : "Admin";
 
     return (
 
@@ -112,7 +125,7 @@ class SessionForm extends React.Component {
         <div className="login-box-instruction">
           <h1>TrackExpense</h1>
           <div className="divide-line"></div>
-          <p>Sign up to track and manage all of your expenses!</p>
+          <p>Track and manage all of your expenses!</p>
         </div>
         <div className="login-box-inputs">
           <div className="errors-container">
@@ -142,9 +155,12 @@ class SessionForm extends React.Component {
             <button id ="demo-button"
               type="button" onClick={this.demoLogin}>DEMO</button>
           </div>
-          <p id="question-login">{questionText}</p>
-          <button id="status-toggle"
-                  onClick={this.toggleStatus}>{text}</button>
+          <div id="status-toggle-div">
+            <button id="status-toggle"
+              onClick={this.toggleStatus}>{text}</button>
+            <button id="status-toggle"
+              onClick={this.toggleAdminStatus}>{adminText}</button>
+          </div>
         </div>
       </div>
 

@@ -50,7 +50,7 @@
     align-items: center;
     flex-direction: column;
     border-top-right-radius: 5px;
-    padding-top: 30px;
+    padding-top: 50px;
 
     .errors-container {
       height: 40px;
@@ -98,18 +98,27 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    #status-toggle {
-      background-color: rgba(0, 0, 0, 0);
-      font-size: 13px;
-      cursor: pointer;
-      color: $teal;
-      -webkit-font-smoothing: antialiased;
-    }
+    #status-toggle-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 5px;
 
-    #status-toggle:hover {
-      font-weight: bolder;
-      text-decoration: underline;
-      color: $teal;
+      #status-toggle {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 13px;
+        cursor: pointer;
+        color: $teal;
+        padding: 5px 0;
+        margin: 2px 7px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      #status-toggle:hover {
+        border-bottom: 2px solid $teal;
+        color: $teal;
+        margin: 0 5px;
+      }
     }
   }
 }

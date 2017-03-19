@@ -1,0 +1,58 @@
+header {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  font-weight: 400;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  background: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+header section {
+  display: flex;
+  flex-direction: row;
+}
+
+header section ul {
+  display: flex;
+  align-items: center;
+}
+
+img#logo {
+  height: 28px;
+  padding: 0 24px;
+}
+
+.nav-right {
+  padding-right: 20px;
+}
+
+.nav-right li {
+  font-size: 14px;
+  color: black;
+  text-align: center;
+  padding-bottom: 12px;
+  margin-right: 40px;
+}
+
+.nav-right li:last-child {
+  margin-right: 5px;
+}
+
+.nav-right li:hover {
+  cursor: pointer;
+  border-bottom: 3px solid $teal;
+}
+
+#profile-pic {
+  width: 30px;
+  padding: 2px 20px 0 10px;
+}
+
+#profile-pic:hover {
+  cursor: pointer;
+}

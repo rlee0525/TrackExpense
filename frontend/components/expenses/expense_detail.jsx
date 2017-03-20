@@ -54,7 +54,7 @@ class Expenses extends React.Component {
             {moment(expense.datetime).format("HH:mm:ss a")}
           </li>
           <li className="expense-amount">
-            ${expense.amount}
+            ${expense.amount.toFixed(2)}
           </li>
           <li className="expense-description">
             {expense.description}

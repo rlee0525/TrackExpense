@@ -20,7 +20,7 @@ class Navbar extends React.Component {
 
   isAdmin() {
     return (
-      <li onClick={this.handleUsers}>Users</li>
+      <li onClick={this.handleUsers} className={this.props.location.pathname==="/users" ? "active" : ""}>Users</li>
     );
   }
 
@@ -40,8 +40,8 @@ class Navbar extends React.Component {
         <section className="nav-right">
           <ul>
             { adminUser && this.isAdmin() }
-            <li onClick={() => this.props.router.push("/expenses")}>Expenses</li>
-            <li onClick={() => this.props.router.push("/reports")}>Reports</li>
+            <li className={this.props.location.pathname==="/expenses" ? "active" : ""} onClick={() => this.props.router.push("/expenses")}>Expenses</li>
+            <li className={this.props.location.pathname==="/reports" ? "active" : ""} onClick={() => this.props.router.push("/reports")}>Reports</li>
             <li onClick={this.signOut}>Sign Out</li>
           </ul>
         </section>

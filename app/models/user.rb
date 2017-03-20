@@ -4,7 +4,6 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 8, allow_nil: true }
 
   has_many :expenses, dependent: :destroy
-  has_many :reports, dependent: :destroy
 
   attr_reader :password
 

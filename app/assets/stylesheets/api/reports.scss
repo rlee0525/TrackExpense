@@ -1,3 +1,145 @@
 // Place all the styles related to the api/reports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reports-div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  padding-top: 120px;
+  list-style: none;
+
+  .reports-buttons-sort {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 35px;
+    border-bottom: 1px solid $light-gray;
+
+    .defined-weeks {
+      margin: 13px 60px 10px 0;
+      text-align: center;
+      line-height: 35px;
+
+      #reports-weeks {
+        background-color: $pink;
+        box-sizing: border-box;
+        width: 120px;
+        height: 36px;
+        color: white;
+        box-shadow: 1px 1px 1px $dark-gray;
+        letter-spacing: 1px;
+      }
+
+      #reports-weeks:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+
+    #divider {
+      height: 30px;
+      margin: 18px 60px 0 0;
+      border-left: 1px solid $pink;
+    }
+
+    .custom-dates {
+      display: flex;
+      flex-direction: row;
+      margin: 13px 0 10px 0;
+
+      .date-input-field {
+        font-size: 15px;
+        height: 33px;
+        width: 130px;
+        padding-left: 20px;
+      }
+
+      #custom-search-date {
+        background-color: $pink;
+        width: 80px;
+        height: 37px;
+        color: white;
+        box-shadow: 1px 1px 1px $dark-gray;
+        letter-spacing: 1px;
+      }
+
+      #custom-search-date:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .reports-detail {
+    margin-top: 40px;
+
+    .reports-detail-heading {
+      font-size: 26px;
+      color: $teal;
+      padding-bottom: 40px;
+    }
+
+    .reports-detail-main {
+      margin-top: 10px;
+
+      .weeks-view-container {
+
+        .weeks-view-title {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-weight: 700;
+          padding-bottom: 20px;
+          border-bottom: 1px solid $light-gray;
+        }
+
+        .weeks-view-list {
+          display: flex;
+          flex-direction: column;
+
+          .weeks-view-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 25px 0;
+            border-bottom: 1px solid $light-gray;
+          }
+        }
+      }
+
+      .weeks-custom-container {
+
+        .weeks-custom-title {
+          display: flex;
+          flex-direction: row;
+          font-weight: 700;
+          padding-bottom: 20px;
+          border-bottom: 1px solid $light-gray;
+
+          div {
+            width: 25%;
+          }
+        }
+
+        .weeks-custom-list {
+          display: flex;
+          flex-direction: column;
+
+          .weeks-custom-item {
+            display: flex;
+            flex-direction: row;
+            padding: 25px 0;
+            border-bottom: 1px solid $light-gray;
+
+            div {
+              width: 25%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

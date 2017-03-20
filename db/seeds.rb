@@ -1,6 +1,5 @@
 User.destroy_all
 Expense.destroy_all
-Report.destroy_all
 
 uid1 = User.create!(username: "RaymondLee", password: "password", admin: true)
 uid2 = User.create!(username: "GuestUser", password: "password", admin: false)

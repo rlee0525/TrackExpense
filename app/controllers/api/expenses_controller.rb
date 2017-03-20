@@ -10,7 +10,7 @@ class Api::ExpensesController < ApplicationController
     if @expense.save
       render "api/expenses/show"
     else
-      render json: @exoense.errors.full_messages, status: 422
+      render json: @expense.errors.full_messages, status: 422
     end
   end
 

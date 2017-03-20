@@ -1,3 +1,66 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the api/expenses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users-list-div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  padding-top: 120px;
+  list-style: none;
+
+  .user-list-item {
+    margin-bottom: 50px;
+
+    .users-li {
+
+      .users-list {
+        width: 100%;
+
+        .user-username {
+          color: $pink;
+          letter-spacing: 1px;
+        }
+
+        .user-expense-list-item {
+
+          .user-expenses-li {
+
+            .user-expense-detail {
+              border-bottom: 1px solid $light-gray;
+              padding-top: 30px;
+
+              .user-expense-ul {
+                display: flex;
+                flex-direction: row;
+
+                .user-expense-date {
+                  width: 20%;
+                  padding-bottom: 10px;
+                }
+
+                .user-expense-time {
+                  width: 20%;
+                }
+
+                .user-expense-amount {
+                  width: 15%;
+                }
+
+                .user-expense-description {
+                  width: 45%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

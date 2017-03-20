@@ -120,7 +120,6 @@ class SessionForm extends React.Component {
     let adminText = this.state.admin ? "User" : "Admin";
 
     return (
-
       <div className="login-box">
         <div className="login-box-instruction">
           <h1>TrackExpense</h1>
@@ -163,7 +162,6 @@ class SessionForm extends React.Component {
           </div>
         </div>
       </div>
-
     );
   }
 }

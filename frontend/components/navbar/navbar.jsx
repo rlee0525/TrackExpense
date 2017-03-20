@@ -15,7 +15,7 @@ class Navbar extends React.Component {
   }
 
   handleUsers() {
-    (this.props.requestUsers()).then(() => console.log("hello"));
+    this.props.router.push("/users");
   }
 
   isAdmin() {
@@ -40,8 +40,8 @@ class Navbar extends React.Component {
         <section className="nav-right">
           <ul>
             { adminUser && this.isAdmin() }
-            <li onClick={() => console.log("Hello")}>Expenses</li>
-            <li onClick={() => console.log("Hello")}>Reports</li>
+            <li onClick={() => this.props.router.push("/expenses")}>Expenses</li>
+            <li onClick={() => this.props.router.push("/reports")}>Reports</li>
             <li onClick={this.signOut}>Sign Out</li>
           </ul>
         </section>

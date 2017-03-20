@@ -7,7 +7,7 @@ import ErrorsReducer from './errors_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  admin: AdminsReducer,
+  users: AdminsReducer,
   expenses: ExpensesReducer,
   reports: ReportsReducer,
   errors: ErrorsReducer

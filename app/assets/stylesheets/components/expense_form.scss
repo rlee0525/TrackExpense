@@ -1,0 +1,67 @@
+.expense-box {
+  display: flex;
+  position: absolute;
+  width: 400px;
+  height: 440px;
+  top: calc(50% - 220px);
+  left: calc(50% - 200px);
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+
+  .expense-box-inputs {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top-right-radius: 5px;
+    padding-top: 25px;
+
+    .expense-form-title {
+      color: $teal;
+      padding-bottom: 5px;
+    }
+
+    .errors-container {
+      height: 40px;
+
+      .errors {
+        font-size: 12px;
+        padding-bottom: 5px;
+        line-height: 1.5em;
+        color: $pink;
+      }
+    }
+
+    .expense-input-field {
+      font-size: 15px;
+      height: 30px;
+      width: 250px;
+      margin-bottom: 10px;
+      padding-left: 5px;
+    }
+
+    .expense-form-button {
+      display: flex;
+      flex-direction: row;
+      margin: 15px 0 10px 0;
+
+      #expense-form-button {
+        background-color: $pink;
+        width: 120px;
+        height: 30px;
+        margin: 0 10px;
+        color: white;
+        box-shadow: 1px 1px 1px $dark-gray;
+      }
+
+      #expense-form-button:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+}

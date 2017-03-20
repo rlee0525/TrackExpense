@@ -84,16 +84,20 @@
 
     .reports-detail-main {
       margin-top: 10px;
+      margin-bottom: 50px;
 
       .weeks-view-container {
 
         .weeks-view-title {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
           font-weight: 700;
           padding-bottom: 20px;
           border-bottom: 1px solid $light-gray;
+
+          div {
+            width: 33%;
+          }
         }
 
         .weeks-view-list {
@@ -103,9 +107,12 @@
           .weeks-view-item {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
             padding: 25px 0;
             border-bottom: 1px solid $light-gray;
+
+            div {
+              width: 33%;
+            }
           }
         }
       }

@@ -37,13 +37,3 @@ Redux tests:
 2. `frontend/__tests__/expenses_actions-test.js`
 3. `frontend/__tests__/reducers-test.js`
 4. `frontend/__tests__/store-test.js`
-
-Component tests:
-
-1. `frontend/__tests__/post_index-test.js`
-  * Write `PostIndexContainer` before `PostIndex`
-2. `frontend/__tests__/post_index_item-test.js`
-3. `frontend/__tests__/post_form-test.js`
-  * Write `PostFormContainer` before `PostForm`
-4. `frontend/__tests__/post_show-test.js`
-```

@@ -9,32 +9,27 @@ end
 RSpec.describe Api::SessionsController, :type => :controller do
   let!(:user) { User.create({username: "ray_lee", password: "password", admin: true}) }
 
-  describe "GET #new" do
-    it "renders the new session template" do
-      get :new
-      expect(response).to render_template("new")
-    end
+  before(:each) do
+    request.env["HTTP_ACCEPT"] = 'application/json'
   end
 
   describe "POST #create" do
     context "with invalid credentials" do
-      it "returns to sign in with an non-existent user" do
+      it "401 error with an non-existent user" do
         post :create, user: {username: "jill_lee", password: "password", admin: true}
-        expect(response).to render_template("new")
-        expect(flash[:errors]).to be_present
+        expect(response.status).to eq 401
       end
 
-      it "returns to sign in on bad password" do
+      it "401 error on bad password" do
         post :create, user: {username: "ray_lee", password: "notmypassword", admin: true}
-        expect(response).to render_template("new")
-        expect(flash[:errors]).to be_present
+        expect(response.status).to eq 401
       end
     end
 
     context "with valid credentials" do
-      it "redirects user to expenses index on success" do
+      it "logs in user on success" do
         post :create, user: {username: "ray_lee", password: "password", admin: true}
-        expect(response).to redirect_to(expenses_url)
+        expect(response.status).to eq 200
       end
 
       it "logs in the user" do

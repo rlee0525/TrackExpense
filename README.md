@@ -34,7 +34,7 @@ Entry point test:
 Redux tests:
 
 1. `frontend/__tests__/expenses_api_util-test.js`
-2. `frontend/__tests__/post_actions-test.js`
+2. `frontend/__tests__/expenses_actions-test.js`
 3. `frontend/__tests__/reducers-test.js`
 4. `frontend/__tests__/store-test.js`
 

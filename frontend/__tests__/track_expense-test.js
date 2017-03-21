@@ -4,7 +4,7 @@ jest.mock('react-dom');
 jest.mock('../store/store', () => jest.fn(() => ({ storeKey: 'storeValue' }) ));
 const configureStore = require('../store/store');
 
-import Root from '../components/root';
+const Root = require('../components/root');
 
 describe('entry', () => {
   let Entry,

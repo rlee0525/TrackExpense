@@ -92,6 +92,7 @@ class ExpenseForm extends React.Component {
             <input type="text"
               placeholder={this.state.date ? this.state.date : "YYYY-MM-DD"}
               className="expense-input-field"
+              id="date"
               value={this.state.date}
               onChange={this.update('date')}
               required />
@@ -102,6 +103,7 @@ class ExpenseForm extends React.Component {
             <input type="text"
               placeholder={this.state.time ? this.state.time : "HH:mm:ss"}
               className="expense-input-field"
+              id="time"
               value={this.state.time}
               onChange={this.update('time')}
               required />
@@ -112,6 +114,7 @@ class ExpenseForm extends React.Component {
             <input type="text"
               placeholder={this.state.amount ? this.state.amount : "0.00"}
               className="expense-input-field"
+              id="amount"
               value={this.state.amount}
               onChange={this.update('amount')}
               required />
@@ -122,6 +125,7 @@ class ExpenseForm extends React.Component {
             <input type="text"
               placeholder={this.state.description ? this.state.description : "I bought something!"}
               className="expense-input-field"
+              id="description"
               value={this.state.description}
               onChange={this.update('description')}
               required />

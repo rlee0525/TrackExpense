@@ -81,6 +81,7 @@ class SessionForm extends React.Component {
     const usernameLoop = username.length;
     const passwordLoop = password.length;
 
+    // curry function to login using demo account
     (function usernameNext() {
       if (counter++ > usernameLoop) return passwordNext();
       setTimeout(() => {
@@ -126,7 +127,7 @@ class SessionForm extends React.Component {
           <div className="divide-line"></div>
           <p>Track and manage all of your expenses!</p>
         </div>
-        <div className="login-box-inputs">
+        <form className="login-box-inputs">
           <div className="errors-container">
             {this.props.errors && this.renderErrors()}
           </div>
@@ -135,6 +136,8 @@ class SessionForm extends React.Component {
             <input type="text"
               placeholder="Username"
               className="login-input-field"
+              id="username"
+              name="username"
               value={this.state.username}
               onChange={this.update('username')}
               required />
@@ -144,6 +147,7 @@ class SessionForm extends React.Component {
             <input type="password"
               placeholder="Password"
               className="login-input-field"
+              id="password"
               value={this.state.password}
               onChange={this.update('password')}
               required />
@@ -160,7 +164,7 @@ class SessionForm extends React.Component {
             <button id="status-toggle"
               onClick={this.toggleAdminStatus}>{adminText}</button>
           </div>
-        </div>
+        </form>
       </div>
     );
   }

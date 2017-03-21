@@ -1,4 +1,6 @@
 class Api::ExpensesController < ApplicationController
+  before_filter :require_logged_in
+
   def index
     @expenses = current_user.expenses
   end

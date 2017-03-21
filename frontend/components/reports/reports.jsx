@@ -126,10 +126,12 @@ class Reports extends React.Component {
   }
 
   createWeeks() {
+    // sort expenses by datetime
     let expenses = values(this.props.expenses).sort((a, b) => {
       return Date.parse(a.datetime) - Date.parse(b.datetime);
     });
 
+    // utilize moment.js to manipulate dates
     let dates = {};
     let startDate = moment(Date.parse(2017, 1, 1));
     let currentDate = moment(Date.now());
@@ -140,6 +142,7 @@ class Reports extends React.Component {
       startDate = moment(startDate).add(7, 'days');
     }
 
+    // create weeks with total amount
     expenses.map(expense => {
       Object.keys(dates).forEach(start => {
         if (moment(expense.datetime).isBetween(start, moment(start).add(7, 'days'))) {
@@ -156,6 +159,7 @@ class Reports extends React.Component {
       weeks[`Week ${i + 1}`] = amount[i];
     }
 
+    // create weeks with date range
     let dateRange = {};
     let weeksArr = Object.keys(weeks);
     let datesArr = Object.keys(dates);

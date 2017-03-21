@@ -15,10 +15,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   requestExpenses: () => dispatch(requestExpenses()),
-  requestExpense: id => dispatch(requestExpense(id)),
-  createExpense: expense => dispatch(createExpense(expense)),
-  updateExpense: expense => dispatch(updateExpense(expense)),
-  destroyExpense: id => dispatch(destroyExpense(id)),
   receiveErrors: () => dispatch(receiveErrors()),
   clearErrors: () => dispatch(clearErrors())
 });

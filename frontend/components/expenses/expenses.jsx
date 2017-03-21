@@ -52,7 +52,7 @@ class Expenses extends React.Component {
             <li className="expense-time-title">Time</li>
             <li className="expense-amount-title">Amount</li>
             <li className="expense-description-title">Description</li>
-            <button className="add-expense"
+            <button className="add-expense" id="add-expense"
                     onClick={this.openModal}>+ Expense</button>
           </ul>
         </div>

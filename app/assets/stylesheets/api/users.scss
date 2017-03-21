@@ -26,6 +26,7 @@
         .user-username {
           color: $pink;
           letter-spacing: 1px;
+          padding-bottom: 20px;
         }
 
         .user-expense-list-item {
@@ -34,7 +35,7 @@
 
             .user-expense-detail {
               border-bottom: 1px solid $light-gray;
-              padding-top: 30px;
+              padding-top: 25px;
 
               .user-expense-ul {
                 display: flex;
@@ -42,7 +43,7 @@
 
                 .user-expense-date {
                   width: 20%;
-                  padding-bottom: 10px;
+                  padding-bottom: 25px;
                 }
 
                 .user-expense-time {

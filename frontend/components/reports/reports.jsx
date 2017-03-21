@@ -119,7 +119,9 @@ class Reports extends React.Component {
     });
   }
 
-  handleCustom() {
+  handleCustom(e) {
+    e.preventDefault();
+
     this.setState({
       customView: true
     });
@@ -182,7 +184,7 @@ class Reports extends React.Component {
               <p id="reports-weeks">WEEKS</p>
             </div>
             <div id="divider"></div>
-            <form className="custom-dates">
+            <div className="custom-dates">
               <label>
                 <input type="text"
                   placeholder="Start Date"
@@ -199,10 +201,10 @@ class Reports extends React.Component {
                   onChange={this.update('endDate')}
                   required />
               </label>
-              <button id="custom-search-date" onClick={this.handleCustom}>
+              <button id="custom-search-date" onClick={(e) => this.handleCustom(e)}>
                 SEARCH
               </button>
-            </form>
+            </div>
           </div>
 
           <div className="reports-detail">
